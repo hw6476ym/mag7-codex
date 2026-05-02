@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mag 7 Supply Chain Explorer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Mag 7 Supply Chain Explorer</h1>
+    <p>
+      Interactive map of products, components, processing stages, and natural resources
+      across Apple, Microsoft, Amazon, Alphabet, Meta, Nvidia, and Tesla.
+    </p>
+  </header>
+
+  <main>
+    <aside class="controls">
+      <label for="companySelect">Company</label>
+      <select id="companySelect"></select>
+
+      <label for="productSelect">Product</label>
+      <select id="productSelect"></select>
+
+      <label for="viewMode">View</label>
+      <select id="viewMode">
+        <option value="product">Single product chain</option>
+        <option value="company">All products in company</option>
+        <option value="all">All Mag 7 companies</option>
+      </select>
+
+      <div class="legend">
+        <h3>Legend</h3>
+        <ul>
+          <li><span class="dot company"></span> Company</li>
+          <li><span class="dot product"></span> Product</li>
+          <li><span class="dot component"></span> Component</li>
+          <li><span class="dot process"></span> Process</li>
+          <li><span class="dot resource"></span> Natural resource</li>
+        </ul>
+      </div>
+    </aside>
+
+    <section class="visualization">
+      <svg id="graph" viewBox="0 0 1200 760" role="img" aria-label="Supply chain graph"></svg>
+    </section>
+
+    <aside class="details">
+      <h2>Node Details</h2>
+      <div id="detailsPanel">Click any node to inspect amounts, dependencies, and lineage.</div>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
